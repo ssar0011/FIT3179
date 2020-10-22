@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": {
-      "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/Proportional%20Map/data/fire_nrt_M6_101673.csv"
+      "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/heat_map/fire.csv"
   },
   "title": "Heat Map of Brightness of Fires",
   "config": {
@@ -15,28 +15,32 @@
   },
   "mark": "rect",
   "encoding": {
+      "x": {
+          "field": "day",
+          "type":"ordinal",
+          "title": "Day",
+          "sort": [],
+          "axis": {
+              "labelAngle": 0
+          }
+      },
       "y": {
             "field": "acq_time",
             "type": "ordinal",
-            "title": "Time"
+            "title": "Time",
+            "axis": {"format": ".2f"}
         },
-      "x": {
-          "field": "acq_date",
-          "timeUnit": "date",
-          "type":"ordinal",
-          "title": "Day",
-          "axis": {
-              "labelAngle": 0,
-              "format": "%e"
-          }
-      },
       "color": {
           "field": "brightness",
           "aggregate": "max",
           "type": "quantitative",
           "legend": {
               "title": null
-          }
+          },
+          "scale":{
+            "scheme":"oranges"
+        } 
       }
   }
 }
+
