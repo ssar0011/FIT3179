@@ -1,0 +1,11 @@
+Jurisdiction,Fire area ,Forest area in fire area,Proportion of fire area that is forested (%)
+,('000 hectares),('000 hectares),
+Australian Capital Territory,90,83,93
+New South Wales,"5,681","5,122",90
+Northern Territory,0,0,0
+Queensland,419,370,88
+South Australia,313,137,44
+Tasmania,42,29,70
+Victoria,"1,583","1,457",92
+Western Australia,"2,044","1,143",56
+Total,"10,173","8,341",82
