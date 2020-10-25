@@ -4,3 +4,5 @@ A basic example that embeds a Vega-Lite chart in a HTML page with Vega-Embed: ht
 
 Week 9 Homework: https://ssar0011.github.io/FIT3179/HW9/
 
+Week 10 Homework: https://ssar0011.github.io/FIT3179/HW10/
+
