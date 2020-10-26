@@ -1,4 +1,4 @@
-Jurisdiction,Fire area (1000 ha),Forest area in fire area (1000 ha),Proportion of fire area that is forested (%),Total Area (1000 ha)
+Jurisdiction,Fire_area,Forest_fire_area,fire_area_proportion,Total_area
 Australian Capital Territory,90,83,93,236
 New South Wales,"5,681","5,122",90,80115
 Northern Territory,0,0,0,142100
