@@ -1,10 +1,10 @@
 Jurisdiction,Fire_area,Forest_fire_area,fire_area_proportion,Total_area
-Australian Capital Territory,90,83,93,236
-New South Wales,5681,5122,90,80115
-Northern Territory,0,0,0,142100
-Queensland,419,370,88,185300
-South Australia,313,137,44,98349
-Tasmania,42,29,70,6840
-Victoria,1583,1457,92,22740
-Western Australia,2044,1143,56,264400
-Total,10173,8341,82,800080
+Australian Capital Territory,90000,83000,0.93,236000
+New South Wales,5681000,5122000,0.90,80115000
+Northern Territory,0,0,0,142100000
+Queensland,419000,370000,0.88,185300000
+South Australia,313000,137000,0.44,98349000
+Tasmania,42000,29000,0.70,6840000
+Victoria,1583000,1457000,0.92,22740000
+Western Australia,2044000,1143000,0.56,264400000
+Total,10173000,8341000,0.82,800080000
