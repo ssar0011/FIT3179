@@ -15,10 +15,10 @@
           "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/chloropleth_map/data.csv"
         },
         "key": "Jurisdiction",
-        "fields": ["Fire_area","Total_area"]
+        "fields": ["fire_area_proportion"]
       }
     },
-    {"calculate": "datum.Fire_area/datum.Total_area+ 0.1", "as": "Fire Area"}
+    {"calculate": "datum.fire_area_proportion", "as": "Fire Area"}
   ],
   "projection": {"type": "equirectangular"},
   "mark": {"type": "geoshape"},
@@ -28,7 +28,7 @@
       "type": "quantitative",
       "scale": {
         "type": "threshold",
-        "domain": [0.1, 0.12, 0.16, 0.4],
+        "domain": [0.5, 0.7, 0.8, 0.9],
         "range": ["#fdbe85", "#fd8d3c","#e6559d", "#e6550d", "#a63603"]
       }
     },
