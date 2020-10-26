@@ -12,23 +12,29 @@
       "lookup": "properties.STE_NAME16",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/chloropleth_map/data"
+          "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/chloropleth_map/data.csv"
         },
         "key": "Jurisdiction",
-        "fields": ["Fire_area"]
+        "fields": ["Fire_area","Total_area"]
       }
-    }
+    },
+    {"calculate": "datum.Fire_area/datum.Total_area+ 0.1", "as": "Fire Area"}
   ],
   "projection": {"type": "equirectangular"},
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Fire_area",
-      "type": "quantitative"
+      "field": "Fire Area",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [0.1, 0.12, 0.16, 0.4],
+        "range": ["#fdbe85", "#fd8d3c","#e6559d", "#e6550d", "#a63603"]
+      }
     },
     "tooltip": [
       {"field": "properties.STE_NAME16", "type": "nominal", "title": "State"},
-      {"field": "Fire_area", "type": "quantitative"}
+      {"field": "Fire Area", "type": "quantitative"}
     ]
   }
 }
