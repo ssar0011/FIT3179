@@ -1,0 +1,87 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A dual axis chart, created by setting y's scale resolution to `\"independent\"`",
+  "width": 400, "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/heat_map/fire.csv"
+  },
+  "params":[
+    {
+      "name": "Year_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "2019",
+          "2020"
+        ],
+        "labels": [
+          "Show All",
+          "2019",
+          "2020"
+        ],
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "Month_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "9",
+          "10",
+          "11",
+          "12",
+          "1"
+        ],
+        "labels": [
+          "Show All",
+          "Sept",
+          "Oct",
+          "Nov",
+          "Dec",
+          "Jan"
+        ],
+        "name": "Month: "
+      }
+    }
+  ],
+  "transform": [
+    {"calculate": "year(datum.acq_date)", "as": "Year"},
+    {
+      "filter": "Year_selection == null || year(datum.acq_date) == Year_selection"
+    },
+    {
+      "filter": "Month_selection == null || month(datum.acq_date) == Month_selection"
+    }],
+     "x": {
+      "field": "day",
+      "type": "quantitative"
+    },
+  "layer": [
+    {
+      "mark": {"opacity": 0.5, "type": "line", "color": "#e99156","interpolate": "monotone"},
+      "encoding": {
+        "y": {
+          "aggregate": "average",
+          "field": "brightness",
+          "title": "FRP (Fire Radiation Power)",
+          "axis": {"titleColor": "#e99156"}
+        }
+      }
+    },
+    {
+      "mark": {"stroke": "#85A9C5", "type": "line", "interpolate": "monotone"},
+      "encoding": {
+        "y": {
+          "aggregate": "count",
+          "field": "frp",
+          "title": "Brightness (inches)",
+          "axis": {"titleColor":"#85A9C5"}
+        }
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}}
+}
