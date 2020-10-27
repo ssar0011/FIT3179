@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "A dual axis chart, created by setting y's scale resolution to `\"independent\"`",
-  "width":"container",
+  "width": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/line_graph/weatherAUS.csv"
   },
@@ -15,18 +15,18 @@
           "Albury",
           "Blue Mountains",
           "Canberra",
-          "Mildura",
+          "MountGambier",
           "Sale",
-          "Wollongong"
+          "Townsville"
           ],
         "labels": [
           "Show All",
           "Albury",
           "Blue Mountains",
           "Canberra",
-          "Mildura",
+          "Mount Gambier",
           "Sale",
-          "Wollongong"
+          "Townsville"
         ],
         "name": "Town: "
       }
@@ -82,13 +82,13 @@
       }
     },
     {
-      "mark": {"stroke": "#85A9C5", "type": "line", "interpolate": "monotone"},
+      "mark": {"opacity": 0.5,"stroke": "#d53e4f", "type": "line", "interpolate": "monotone"},
       "encoding": {
         "y": {
           "aggregate": "average",
           "field": "WindSpeed",
           "title": "Wind Speed",
-          "axis": {"titleColor":"#85A9C5"}
+          "axis": {"titleColor":"#d53e4f"}
         }
       }
     }
