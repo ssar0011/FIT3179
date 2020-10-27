@@ -16,6 +16,21 @@
       "data": {
         "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/heat_map/fire_small.csv"
       },
+  "params": [
+    {
+      "name": "Time_slider",
+      "value": 1,
+      "bind": {
+        "input": "range",
+        "min": 1,
+        "max": 30,
+        "step": 1,
+        "name": "Day: "
+      }
+    },
+  "transform": [
+    {"filter": "datum.day == Time_slider"}
+    ],
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"}
