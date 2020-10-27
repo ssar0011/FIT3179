@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 1000,
+  "height": 700,
+  "title": "Bushfires around Australia",
+  "projection": {"type": "equirectangular"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/Proportional%20Map/js/AUS_2016_AUST.topojson",
+        "format": {"type": "topojson", "feature": "AUS_2016_AUST"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/heat_map/fire.csv"
+        },
+    "params": [
+      {
+        "name": "Time_slider",
+        "value": 1,
+        "bind": {
+          "input": "range",
+          "min": 1,
+          "max": 30,
+          "step": 1,
+          "name": "Day: "
+        }
+      },
+      {
+      "name": "month_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "September",
+          "October",
+          "November",
+          "December",
+          "January"
+        ],
+        "labels": [
+          "Show All",
+          "September",
+          "October",
+          "November",
+          "December",
+          "January"
+        ],
+        "name": "Select Month: "
+      }
+    }
+    ],
+
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"}
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "circle",
+            "tooltip": {"content": "data"}
+          },
+          "encoding": {
+            "size": {"field": "frp", 
+                     "type": "quantitative"
+                     },
+            "color": {"field": "brightness", 
+                      "type": "quantitative",
+                      "scale":{
+                          "scheme":"oranges"
+                      }          
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
