@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A dual axis chart, created by setting y's scale resolution to `\"independent\"`",
+  "width": 400, "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/line_graph/weatherAUS.csv"
+  },
+  "params": [
+    {
+      "name": "town_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Albury",
+          "Blue Mountains",
+          "Canberra",
+          "Mildura",
+          "Sale",
+          "Wollongong"
+          ],
+        "labels": [
+          "Show All",
+          "Albury",
+          "Blue Mountains",
+          "Canberra",
+          "Mildura",
+          "Sale",
+          "Wollongong"
+        ],
+        "name": "Town: "
+      }
+    },
+    {
+      "name": "year_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "2012",
+          "2013",
+          "2014",
+          "2015"
+          ],
+        "labels": [
+          "Show All",
+          "2012",
+          "2013",
+          "2014",
+          "2015"
+        ],
+        "name": "Year: "
+      }
+    }
+    ],
+  "transform": [{
+      "filter": "town_selection == null || datum.Location == town_selection"
+      },
+  {"filter": "year_selection == null || year(datum.Date) == year_selection"}],
+  "encoding": {
+    "x": {
+      "timeUnit": "month",
+      "field": "Date",
+      "axis": {"format": "%b", "title": null}
+    }
+  },
+  "layer": [
+    {
+      "mark": {"opacity": 0.3, "type": "area", "color": "#85C5A6"},
+      "encoding": {
+        "y": {
+          "aggregate": "average",
+          "field": "MaxTemp",
+          "title": "Avg. Temperature (°C)",
+          "axis": {"titleColor": "#85C5A6"}
+        },
+
+        "y2": {
+          "aggregate": "average",
+          "field": "MinTemp"
+        }
+      }
+    },
+    {
+      "mark": {"stroke": "#85A9C5", "type": "line", "interpolate": "monotone"},
+      "encoding": {
+        "y": {
+          "aggregate": "average",
+          "field": "WindSpeed",
+          "title": "Wind Speed",
+          "axis": {"titleColor":"#85A9C5"}
+        }
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}}
+}
