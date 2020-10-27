@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 300,
+  "width": 350,
   "height": 200,
   "title": "Bushfires around Australia",
   "projection": {"type": "equirectangular"},
