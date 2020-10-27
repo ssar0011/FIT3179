@@ -3,6 +3,7 @@
   "data": {
       "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/heat_map/fire.csv"
   },
+  "width":"container",
   "title": "Heat Map of Brightness of Fires",
   "config": {
       "view": {
