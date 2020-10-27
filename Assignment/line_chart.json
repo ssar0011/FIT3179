@@ -66,13 +66,13 @@
   },
   "layer": [
     {
-      "mark": {"opacity": 0.3, "type": "area", "color": "#85C5A6"},
+      "mark": {"opacity": 0.3, "type": "area", "color": "#ff7f00"},
       "encoding": {
         "y": {
           "aggregate": "average",
           "field": "MaxTemp",
           "title": "Avg. Temperature (°C)",
-          "axis": {"titleColor": "#85C5A6"}
+          "axis": {"titleColor": "#ff7f00"}
         },
 
         "y2": {
