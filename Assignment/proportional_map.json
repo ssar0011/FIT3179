@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": "container",
-  "height": 600,
+  "height": 300,
   "title": "Bushfires around Australia",
   "projection": {
         "type": "equirectangular",
         "center": [134, -27],
-        "scale": 750
+        "scale": 450
       },
 
     "params": [
@@ -114,7 +114,7 @@
           "layer": [
             {"mark": {"type": "circle", "color": "black"}, "encoding": {}},
             {
-              "mark": {"type": "text", "align": "left", "dx": 8},
+              "mark": {"type": "text", "align": "right", "dx": -8},
               "encoding": {"text": {"field": "city"}}
             }
           ]
