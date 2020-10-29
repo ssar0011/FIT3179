@@ -55,6 +55,7 @@
           "aggregate": "max",
           "type": "quantitative",
           "legend": {
+              "orient":"bottom"
               "title": null
           },
           "scale":{
