@@ -62,13 +62,16 @@
         ],
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"}
-      },
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "tooltip": [
+          {"field": "brightness", "title": "Brightness","type":"quantitative"},
+          {"field": "frp", "title": "FRP(Fire Radiation Power)","type":"quantitative"}
+         ]
+        },
       "layer": [
         {
           "mark": {
-            "type": "circle",
-            "tooltip": {"content": "data"}
+            "type": "circle"
           },
           "encoding": {
             "size": {"field": "frp", 
