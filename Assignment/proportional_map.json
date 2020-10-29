@@ -1,16 +1,35 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 800,
+  "width": "container",
   "height": 600,
   "title": "Bushfires around Australia",
   "projection": {
         "type": "equirectangular",
         "center": [134, -27],
-        "scale": 1000
+        "scale": 750
       },
 
     "params": [
       {
+      "name": "month_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "11",
+          "12",
+          "1"
+        ],
+        "labels": [
+          "Show All",
+          "November",
+          "December",
+          "January"
+        ],
+        "name": "Select Month: "
+      }
+    },
+    {
         "name": "Time_slider",
         "value": 1,
         "bind": {
@@ -20,30 +39,7 @@
           "step": 1,
           "name": "Day: "
         }
-      },
-      {
-      "name": "month_selection",
-      "bind": {
-        "input": "select",
-        "options": [
-          null,
-          "9",
-          "10",
-          "11",
-          "12",
-          "1"
-        ],
-        "labels": [
-          "Show All",
-          "September",
-          "October",
-          "November",
-          "December",
-          "January"
-        ],
-        "name": "Select Month: "
-      }
-    }],
+      }],
   "layer": [
     {
       "data": {
