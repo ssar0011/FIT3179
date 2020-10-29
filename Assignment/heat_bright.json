@@ -1,8 +1,28 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "params": [{
+      "name": "satellite_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Aqua",
+          "Terra"
+        ],
+        "labels": [
+          "Show All",
+          "Aqua",
+          "Terra"
+        ],
+        "name": "Select Satellite: "
+      }
+  }],
   "data": {
       "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/heat_map/fire.csv"
   },
+  "transform":[{
+    "filter":"satellite_selection == null || datum.satellite == satellite_selection"
+    }],
   "width":"container",
   "title": "Brightness of Fires by Day",
   "config": {
@@ -39,7 +59,7 @@
           },
           "scale":{
             "type": "log",
-            "domain":[370,500],
+            "domain":[320,510],
             "scheme":"oranges"
         } 
       },
