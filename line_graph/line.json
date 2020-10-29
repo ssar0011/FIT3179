@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "A dual axis chart, created by setting y's scale resolution to `\"independent\"`",
-  "width": 400, "height": 300,
+  "width": "container",
   "data": {
-    "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/line_graph/weatherAUS.csv"
+    "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/line_graph/weather.csv"
   },
   "params": [
     {
@@ -12,21 +12,23 @@
         "input": "select",
         "options": [
           null,
+          "Bairnsdale East",
           "Albury",
-          "Blue Mountains",
+          "Port Macquarie",
+          "Kalgoorlie",
           "Canberra",
-          "Mildura",
-          "Sale",
-          "Wollongong"
+          "Esperance",
+          "Kangaroo Island"
           ],
         "labels": [
           "Show All",
+          "Bairnsdale East",
           "Albury",
-          "Blue Mountains",
+          "Port Macquarie",
+          "Kalgoorlie",
           "Canberra",
-          "Mildura",
-          "Sale",
-          "Wollongong"
+          "Esperance",
+          "Kangaroo Island"
         ],
         "name": "Town: "
       }
@@ -66,13 +68,13 @@
   },
   "layer": [
     {
-      "mark": {"opacity": 0.3, "type": "area", "color": "#85C5A6"},
+      "mark": {"opacity": 0.3, "type": "area", "color": "#ff7f00"},
       "encoding": {
         "y": {
           "aggregate": "average",
           "field": "MaxTemp",
           "title": "Avg. Temperature (°C)",
-          "axis": {"titleColor": "#85C5A6"}
+          "axis": {"titleColor": "#ff7f00"}
         },
 
         "y2": {
@@ -82,13 +84,13 @@
       }
     },
     {
-      "mark": {"stroke": "#85A9C5", "type": "line", "interpolate": "monotone"},
+      "mark": {"opacity": 0.5,"stroke": "#d53e4f", "type": "line", "interpolate": "monotone"},
       "encoding": {
         "y": {
           "aggregate": "average",
           "field": "WindSpeed",
           "title": "Wind Speed",
-          "axis": {"titleColor":"#85A9C5"}
+          "axis": {"titleColor":"#d53e4f"}
         }
       }
     }
