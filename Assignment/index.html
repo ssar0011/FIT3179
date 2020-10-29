@@ -66,8 +66,14 @@
 
     <!-- pure grid group -->
     <div class="pure-g">
-        <div class="pure-u-1-2">
+        <div class="pure-u-2-3">
           <div id="vis1" class="vis-container"></div>
+        </div>
+      <div class="pure-u-1-6">
+          <div id="vis5"  class="vis-container"></div>
+        </div>
+      <div class="pure-u-1-6">
+          <div id="vis6"  class="vis-container"></div>
         </div>
     </div>
     <!-- end pure grid group -->
@@ -89,8 +95,11 @@
 
     <!-- pure grid group -->
     <div class="pure-g">
-      <div class="pure-u-2-3">
+      <div class="pure-u-1-3">
         <div id="vis2"  class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div id="vis7"  class="vis-container"></div>
       </div>
       <div class="pure-u-1-3">
         <div class="description description-left">
@@ -122,9 +131,12 @@
    
 <script type="text/javascript">
   var specVis1 = "./proportional_map.json";
-  var specVis2= "./heat.json";
+  var specVis2= "./heat_bright.json";
   var specVis3= "./line_chart.json";
   var specVis4= "./scatter.json";
+  var specVis5= "./nsw_vic_prop.json";
+  var specVis6= "./prop_wa.json";
+  var specVis7= "./heat_frp.json";
 
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
