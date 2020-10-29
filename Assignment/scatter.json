@@ -41,8 +41,14 @@
   {"filter": "month_selection == null || datum.month == month_selection"}
   ],
   "encoding": {
-    "x": {"field": "brightness", "type": "quantitative","axis": {"tickCount": 6},"scale": {"domain": [290,560]}},
-    "y": {"field": "frp", "type": "quantitative","axis": {"tickCount": 8},
+    "x": {"field": "brightness", 
+          "title": "Brightness",
+          "type": "quantitative","axis": {"tickCount": 6},
+          "scale": {"domain": [290,560]}},
+    "y": {"field": "frp", 
+          "title": "FRP (Fire Radiation Power)",
+          "type": "quantitative",
+          "axis": {"tickCount": 8},
     "scale": {"domain": [0,6000]},"title":"FRP (Fire Radiation Power)"},
     "color": {"field": "satellite", "type": "nominal"},
     "tooltip": {"field": "confidence", "type": "nominal"}
@@ -61,6 +67,7 @@
       "encoding":{
         "color": {
             "field": "satellite",
+            "title": "Satellite
             "type": "nominal",
             "scale":{ "range": [
                 "#ff7f00",
@@ -71,7 +78,9 @@
         "value": 0.3
           },
         "tooltip": [
-          {"field": "confidence", "type": "quantitative"}
+          {"field": "brightness", "type": "quantitative"},
+          {"field": "brightness", "type": "quantitative"},
+          {"field": "brightness", "type": "quantitative"}
         ]
       }
     }
