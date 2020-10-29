@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+      "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/heat_map/fire.csv"
+  },
+  "width":"container",
+  "title": "FRP of Fires by Day",
+  "config": {
+      "view": {
+          "strokeWidth": 0,
+          "step": 13
+      },
+      "axis": {
+          "domain": false
+      }
+  },
+  "mark": "rect",
+  "encoding": {
+      "x": {
+          "field": "day",
+          "type":"ordinal",
+          "title": "Day",
+          "sort": [],
+          "axis": {
+              "labelAngle": 0
+          }
+      },
+      "y": {
+            "field": "acq_date",
+            "timeUnit": "yearmonth",
+            "type": "nominal",
+            "title": "Month"            },
+      "color": {
+          "field": "frp",
+          "aggregate": "max",
+          "type": "quantitative",
+          "legend": {
+              "title": null
+          },
+          "scale":{
+            "type": "log",
+            "domain":[300,11000],
+            "scheme":"oranges"
+        } 
+      },
+      "tooltip": [
+      {"field": "acq_date", "timeUnit": "yearmonth", "title": "Month"},
+      {"field": "day", "title": "Day"},
+      {
+        "field": "frp",
+        "aggregate": "max",
+        "title": "FRP (Fire Radiation Power)",
+        "format": ".0f"
+      }
+    ]
+
+  }
+}
+
+
+
