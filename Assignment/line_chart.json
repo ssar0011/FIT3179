@@ -3,7 +3,7 @@
   "description": "A dual axis chart, created by setting y's scale resolution to `\"independent\"`",
   "width": "container",
   "data": {
-    "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/line_graph/weatherAUS.csv"
+    "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/line_graph/weather.csv"
   },
   "params": [
     {
@@ -12,21 +12,23 @@
         "input": "select",
         "options": [
           null,
+          "Bairnsdale East",
           "Albury",
-          "Blue Mountains",
+          "Port Macquarie",
+          "Kalgoorlie",
           "Canberra",
-          "MountGambier",
-          "Sale",
-          "Townsville"
+          "Esperance",
+          "Kangaroo Island"
           ],
         "labels": [
           "Show All",
+          "Bairnsdale East",
           "Albury",
-          "Blue Mountains",
+          "Port Macquarie",
+          "Kalgoorlie",
           "Canberra",
-          "Mount Gambier",
-          "Sale",
-          "Townsville"
+          "Esperance",
+          "Kangaroo Island"
         ],
         "name": "Town: "
       }
