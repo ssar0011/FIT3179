@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": "container",
-  "height": 150,
+  "height": 370,
   "title": "Bushfires along the NSW Coastline",
   "projection": {
         "type": "equirectangular",
-        "center": [147.5, -34],
-        "scale": 1800
+        "center": [149.5, -34],
+        "scale": 2600
       },
 
     "params": [
