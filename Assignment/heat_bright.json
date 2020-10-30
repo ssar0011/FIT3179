@@ -60,7 +60,7 @@
           },
           "scale":{
             "type": "log",
-            "domain":[300,11000],
+            "domain":[370,510],
             "scheme":"oranges"
         } 
       },
