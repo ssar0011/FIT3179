@@ -72,7 +72,7 @@
       "encoding": {
         "y": {
           "aggregate": "average",
-          "scale":{"domain":[0,25]},
+          "scale":{"domain":[0,30]},
           "field": "MaxTemp",
           "title": "Avg. Temperature (°C)",
           "axis": {"titleColor": "#ff7f00"}
