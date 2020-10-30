@@ -1,81 +1,129 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "params": [{
-      "name": "satellite_selection",
+  "width": "container",
+  "height": 300,
+  "title": "Bushfires along the NSW Coastline",
+  "projection": {
+        "type": "equirectangular",
+        "center": [149.5, -34],
+        "scale": 2100
+      },
+
+    "params": [
+      {
+      "name": "month_selection",
       "bind": {
         "input": "select",
         "options": [
           null,
-          "Aqua",
-          "Terra"
+          "11",
+          "12",
+          "1"
         ],
         "labels": [
           "Show All",
-          "Aqua",
-          "Terra"
+          "November",
+          "December",
+          "January"
         ],
-        "name": "Select Satellite: "
+        "name": "Select Month: "
       }
-  }],
-  "data": {
-      "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/heat_map/fire.csv"
-  },
-  "transform":[{
-    "filter":"satellite_selection == null || datum.satellite == satellite_selection"
-    }],
-  "width":"container",
-  "title": "Brightness of Fires by Day",
-  "config": {
-      "view": {
-          "strokeWidth": 0,
-          "step": 13
-      },
-      "axis": {
-          "domain": false
-      }
-  },
-  "mark": "rect",
-  "encoding": {
-      "x": {
-          "field": "day",
-          "type":"ordinal",
-          "title": "Day",
-          "sort": [],
-          "axis": {
-              "labelAngle": 0
-          }
-      },
-      "y": {
-            "field": "acq_date",
-            "timeUnit": "yearmonth",
-            "type": "nominal",
-            "title": "Month"            },
-      "color": {
-          "field": "brightness",
-          "aggregate": "max",
-          "type": "quantitative",
-          "legend": {
-              "orient":"bottom",
-              "title": null
-          },
-          "scale":{
-            "type": "log",
-            "domain":[320,510],
-            "scheme":"oranges"
-        } 
-      },
-      "tooltip": [
-      {"field": "acq_date", "timeUnit": "yearmonth", "title": "Month"},
-      {"field": "day", "title": "Day"},
+    },
       {
-        "field": "brightness",
-        "aggregate": "max",
-        "title": "Brightness",
-        "format": ".0f"
-      }
-    ]
-  }
+        "name": "Time_slider",
+        "value": 1,
+        "bind": {
+          "input": "range",
+          "min": 1,
+          "max": 30,
+          "step": 1,
+          "name": "Day: "
+        }
+      }],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/Proportional%20Map/js/aus_states.topojson",
+        "format": {"type": "topojson", "feature": "austates"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/heat_map/fire.csv"
+        },
+      "transform": [{"filter":"datum.day == Time_slider"},
+      {
+        "filter":"month_selection == null || datum.month == month_selection"}
+        ],
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "tooltip": [
+          {"field": "brightness", "title": "Brightness","type":"quantitative"},
+          {"field": "frp", "title": "FRP(Fire Radiation Power)","type":"quantitative"}
+         ]
+        },
+      "layer": [
+        {
+          "mark": {
+            "type": "circle"
+          },
+          "encoding": {
+            "size": {"field": "frp", 
+                    "title": "FRP (Fire Radiation Power)",
+                     "type": "quantitative",
+                     "legend": null,
+                     "scale":{
+                       "type":"threshold",
+                       "domain":[500,1500,2000,3000],
+                       "range": [20,100,200,350]
+                     }
+                     },
+            "color": {"field": "brightness", 
+                      "title": "Brightness",
+                      "type": "quantitative",
+                      "legend": null,
+                      "scale":{
+                        "domain":[300,500],
+                        "scheme":"oranges"
+                      }          
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/Assignment/au_city_locations.csv"
+          },
+          "transform": [
+            {
+              "filter": {
+                "field": "city",
+                "oneOf": [
+                  "Bairnsdale East",
+                  "Albury",
+                  "Port Macquarie",
+                  "Kalgoorlie",
+                  "Canberra",
+                  "Esperance",
+                  "Kangaroo Island"                ]
+              }
+            }
+          ],
+          "encoding": {
+            "longitude": {"field": "lng", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"}
+          },
+          "layer": [
+            {"mark": {"type": "circle", "color": "black"}, "encoding": {}},
+            {
+              "mark": {"type": "text", "align": "left", "dx": 5},
+              "encoding": {"text": {"field": "city"}}
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
 }
-
-
-
