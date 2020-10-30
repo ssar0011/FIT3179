@@ -24,7 +24,7 @@
     "filter":"satellite_selection == null || datum.satellite == satellite_selection"
     }],
   "width":"container",
-  "title": "FRP of Fires by Day",
+  "title": "Brightness of Fires by Day",
   "config": {
       "view": {
           "strokeWidth": 0,
@@ -52,7 +52,6 @@
             "title": "Month"            },
       "color": {
           "field": "brightness",
-          "title": "Brightness",
           "aggregate": "max",
           "type": "quantitative",
           "legend": {
