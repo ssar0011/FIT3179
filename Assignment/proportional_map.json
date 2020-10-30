@@ -73,7 +73,7 @@
             "size": {"field": "frp", 
                     "title": "FRP (Fire Radiation Power)",
                      "type": "quantitative",
-                     "legend": { "orient":"bottom"},
+                     "legend": { "orient":"bottom-right"},
                      "scale":{
                        "type":"threshold",
                        "domain":[500,1500,2000,3000],
