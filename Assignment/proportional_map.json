@@ -117,7 +117,7 @@
           "layer": [
             {"mark": {"type": "circle", "color": "black"}, "encoding": {}},
             {
-              "mark": {"type": "text", "align": "right", "dx": -8},
+              "mark": {"type": "text", "align": "left", "dx": 5},
               "encoding": {"text": {"field": "city"}}
             }
           ]
