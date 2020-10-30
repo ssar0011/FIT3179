@@ -39,7 +39,7 @@
   {"filter": "datum.frp > 0"},
   {"filter": "datum.day == Month_day"},
   {"filter": "month_selection == null || datum.month == month_selection"},
-  {"filter": "datum.confidence > 80"}
+  {"filter": "datum.confidence > 90"}
   ],
   "encoding": {
     "x": {"field": "brightness", 
