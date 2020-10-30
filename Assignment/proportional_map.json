@@ -77,7 +77,7 @@
                      "scale":{
                        "type":"threshold",
                        "domain":[500,1500,2000,3000],
-                       "range": [20,100,200,350]
+                       "range": [20,100,150,200,350]
                      }
                      },
             "color": {"field": "brightness", 
