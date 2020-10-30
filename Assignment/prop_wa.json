@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": "container",
-  "height": 150,
+  "height": 370,
   "title": "Bushfires in Nullarbor Region of Western Australia",
   "projection": {
         "type": "equirectangular",
         "center": [122, -32],
-        "scale": 1700
+        "scale": 2500
       },
 
     "params": [
