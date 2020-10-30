@@ -62,6 +62,7 @@
   "encoding": {
     "x": {
       "timeUnit": "month",
+      "domain":[0,25],
       "field": "Date",
       "axis": {"format": "%b", "title": null}
     }
@@ -88,6 +89,7 @@
       "encoding": {
         "y": {
           "aggregate": "average",
+          "domain":[0,25],
           "field": "WindSpeed",
           "title": "Wind Speed",
           "axis": {"titleColor":"#d53e4f"}
