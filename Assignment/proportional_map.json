@@ -83,7 +83,7 @@
             "color": {"field": "brightness", 
                       "title": "Brightness",
                       "type": "quantitative",
-                      "legend": { "orient":"bottom"},
+                      "legend": { "orient":"bottom-left"},
                       "scale":{
                         "domain":[300,500],
                         "scheme":"oranges"
