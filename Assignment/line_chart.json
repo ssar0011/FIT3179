@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "A dual axis chart, created by setting y's scale resolution to `\"independent\"`",
+  "title": "Avg Temperature and Wind Speed of Most Affected Towns",
   "width": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/ssar0011/FIT3179/main/line_graph/weather.csv"
@@ -11,7 +11,7 @@
       "bind": {
         "input": "select",
         "options": [
-          null,
+          "null",
           "Bairnsdale East",
           "Albury",
           "Port Macquarie",
@@ -38,7 +38,7 @@
       "bind": {
         "input": "select",
         "options": [
-          null,
+          "null",
           "2012",
           "2013",
           "2014",
@@ -62,6 +62,7 @@
   "encoding": {
     "x": {
       "timeUnit": "month",
+      "title": "Month",
       "field": "Date",
       "axis": {"format": "%b", "title": null}
     }
@@ -91,7 +92,7 @@
           "aggregate": "average",
           "scale":{"domain":[0,25]},
           "field": "WindSpeed",
-          "title": "Wind Speed",
+          "title": "Wind Speed (km/h)",
           "axis": {"titleColor":"#d53e4f"}
         }
       }
