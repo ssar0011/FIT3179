@@ -19,13 +19,11 @@
       "bind": {
         "input": "select",
         "options": [
-          null,
           "11",
           "12",
           "1"
         ],
         "labels": [
-          "Show All",
           "November",
           "December",
           "January"
