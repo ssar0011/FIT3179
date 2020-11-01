@@ -11,7 +11,6 @@
       "bind": {
         "input": "select",
         "options": [
-          "null",
           "Bairnsdale East",
           "Albury",
           "Port Macquarie",
@@ -21,7 +20,6 @@
           "Kangaroo Island"
           ],
         "labels": [
-          "Show All",
           "Bairnsdale East",
           "Albury",
           "Port Macquarie",
@@ -38,14 +36,12 @@
       "bind": {
         "input": "select",
         "options": [
-          "null",
           "2012",
           "2013",
           "2014",
           "2015"
           ],
         "labels": [
-          "Show All",
           "2012",
           "2013",
           "2014",
@@ -56,9 +52,9 @@
     }
     ],
   "transform": [{
-      "filter": "town_selection == null || datum.Location == town_selection"
+      "filter": "datum.Location == town_selection"
       },
-  {"filter": "year_selection == null || year(datum.Date) == year_selection"}],
+  {"filter": "year(datum.Date) == year_selection"}],
   "encoding": {
     "x": {
       "timeUnit": "month",
