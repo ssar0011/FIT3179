@@ -6,3 +6,4 @@ Week 9 Homework: https://ssar0011.github.io/FIT3179/HW9/
 
 Week 10 Homework: https://ssar0011.github.io/FIT3179/HW10/
 
+Visualisation 2: https://ssar0011.github.io/FIT3179/Assignment/
