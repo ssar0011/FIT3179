@@ -52,9 +52,9 @@
     }
     ],
   "transform": [{
-      "filter": "datum.Location == town_selection"
+      "filter": "town_selection == null || datum.Location == town_selection"
       },
-  {"filter": "year(datum.Date) == year_selection"}],
+  {"filter": "year_selection == null || year(datum.Date) == year_selection"}],
   "encoding": {
     "x": {
       "timeUnit": "month",
