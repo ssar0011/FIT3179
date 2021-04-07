@@ -1,4 +1,4 @@
-# FIT3179
+# 2019-2020 Australian Bushfire Data Visualisation
 
 This visualisation was created using Vega-Lite. The visualisation shows the distribution of bushfires across Australia during the 2019-2020 summer. 
 
